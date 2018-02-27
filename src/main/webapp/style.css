@@ -52,11 +52,12 @@ h1 {
 	margin-right: 0;
 	margin-left: 0;
 	height: 100px;
-	background-image: url(boblogo.jpg);
+	background-image: url(/boblogo.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	text-indent: -9999px;
 }
+
 
 h2 {
 	font-family: Georgia;
@@ -133,10 +134,11 @@ td, th {
 }
 
 tr {
-    font-size: 200px;
+    font-size: 20px;
 }
 
-tr:nth-of-type(odd) {
+tr:nth-of-type(even) {
+    background-color: #1FEC7A
 }
 
 header, main, nav, footer, figure, figcaption, aside, section, article {display: block; }

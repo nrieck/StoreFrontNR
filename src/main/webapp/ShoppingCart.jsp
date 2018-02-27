@@ -35,6 +35,13 @@
 		<div>
 			
 				<h2>Shopping Cart</h2>
+                    <table>
+                        <tr>
+                            <th> Product Name </th>
+                            <th> Price </th>
+                        </tr>
+                        
+		</table>
 				
 	</main>
 			<footer>

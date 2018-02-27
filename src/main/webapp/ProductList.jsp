@@ -4,8 +4,8 @@
     Author     : Nick
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="edu.wctc.dj.week4.model.Product"%>
-<%@page import="edu.wctc.dj.week4.model.Name"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -42,23 +42,16 @@
                         <tr>
                             <th> Product Name </th>
                             <th> Price </th>
-                            
                         </tr>
-			<%
-			List<Product> productList =
-				(List<Product>) request.getAttribute("productList");
-			for (Product product : productList){
-			%>
-                        
+                        <c:forEach var="product" items="${productList}">     
                         <tr>
-				<td><%= product.getProductName()%></td>
+				<td><c:out value="${product.productName}"/></td>
 				<td>
-		<a href="?id=<%= product.getProductId()%>"><%= product.getProductPrice()%></a>
+		
+                                   <a href="?id=<c:out value="${product.productId}"/>"><c:out value="${product.productPrice}"/></a>
 				</td>
 			</tr>
-			<%
-			}
-			%>
+                        </c:forEach>
 		</table>
 
             </main>

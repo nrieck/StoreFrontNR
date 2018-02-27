@@ -19,7 +19,7 @@
     <body>
         <div id="wrapper">
             <header>
-                <h1>Store Front</h1>
+                <h1 style="color: white;">Store Front</h1>
             </header>
             <nav>
                 <ul>
@@ -30,8 +30,7 @@
                 </ul>
             </nav>
             <main id="hero">	
-                <h1>Search!</h1>
-
+                <h2>Search Product!</h2>
                 <form method="get" action="ProductController">
                     <input type="text" name="search"/>
                     <input type="submit" value="Search" />
