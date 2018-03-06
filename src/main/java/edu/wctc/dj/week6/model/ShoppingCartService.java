@@ -27,5 +27,9 @@ public class ShoppingCartService {
         
         return theProductName;
     }
+
+    public List<ShoppingCart> getAllProductNames() {
+        return shoppingCartList;
+    }
     
 }
