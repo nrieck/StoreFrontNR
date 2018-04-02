@@ -1,30 +1,32 @@
 
 package edu.wctc.dj.week6.model;
 
-public class ShoppingCart {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShoppingCart implements Serializable{
     
-    private String productName;
-    private String quantity;
-
-    public ShoppingCart(String productName, String quantity) {
-        this.productName = productName;
-        this.quantity = quantity;
+    private final List<Product> contents = new ArrayList<>();
+    
+    public List<Product> getContents() {
+        return contents;
     }
-
-    public String getProductName() {
-        return productName;
+    
+    public int getItemsInCart() {
+        return contents.size();
     }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
+    
+    public void add(Product product) {
+        contents.add(product);
     }
-
-    public String getQuantity() {
-        return quantity;
+    
+    public void remove(Product product) {
+        contents.remove(product);
     }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    
+    public void removeAll() {
+        contents.clear();
     }
     
     

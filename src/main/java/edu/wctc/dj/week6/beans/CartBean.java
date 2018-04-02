@@ -5,12 +5,14 @@
  */
 package edu.wctc.dj.week6.beans;
 
+import edu.wctc.dj.week6.model.Product;
 import edu.wctc.dj.week6.model.ShoppingCart;
 import edu.wctc.dj.week6.model.ShoppingCartService;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -20,31 +22,22 @@ import java.util.List;
 @SessionScoped
 public class CartBean implements Serializable {
     
-    private final ShoppingCartService shoppingCartService = new ShoppingCartService();
-    private ShoppingCart shoppingCart;
-    private List<ShoppingCart> shoppingCartList;
+    private final String sessionId;
+    private final ShoppingCart cart;
+    private final ShoppingCartService cartService = new ShoppingCartService();
     
     public CartBean() {
-    }
-
-    public ShoppingCart getShoppingCart() {
-        return shoppingCart;
-    }
-
-    public void setShoppingCart(ShoppingCart shoppingCart) {
-        this.shoppingCart = shoppingCart;
-    }
-
-    public List<ShoppingCart> getShoppingCartList() {
-        return shoppingCartList;
-    }
-
-    public void setShoppingCartList(List<ShoppingCart> shoppingCartList) {
-        this.shoppingCartList = shoppingCartList;
+        FacesContext facesCOntext = FacesContext.getCurrentInstance();
+        sessionId = facesCOntext.getExternalContext().getSessionId(true);
+        
+        cart = cartService.getContents(sessionId);
     }
     
-    public String allProducts() {
-        shoppingCartList = shoppingCartService.getAllProductNames();
-        return "productList";
+    public int getItemsInCart() {
+        return cart.getItemsInCart();
+    }
+    public void addToCart(Product product) {
+        cart.add(product);
+        cartService.update(sessionId, cart);
     }
 }

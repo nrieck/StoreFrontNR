@@ -7,29 +7,37 @@ package edu.wctc.dj.week6.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 /**
  *
  * @author Nick
  */
 public class ShoppingCartService {
-    private List<ShoppingCart> shoppingCartList = Arrays.asList(
-    );
-   
-    public Product addToShoppingCart(String id) {
-        Product theProductName = null;
+    private static final Map<String, ShoppingCart> contents = new HashMap<>();
+    
+    public ShoppingCart getContents(String sessionId) {
+        ShoppingCart cart = contents.computeIfAbsent(sessionId, (String t) -> new ShoppingCart());
         
-        return theProductName;
-    }
-    public Product removeShoppingCartItem(String id) {
-        Product theProductName = null;
+//        ShoppingCart cart = contents.computeIfAbsent(sessionId, new Function<String, ShoppingCart>() {
+//            @Override
+//            public ShoppingCart apply(String t) {
+//                return new ShoppingCart();
+//            }
+//        });
         
-        return theProductName;
+        return cart;
     }
-
-    public List<ShoppingCart> getAllProductNames() {
-        return shoppingCartList;
+    
+    public void update(String sessionId, ShoppingCart cart) {
+        contents.put(sessionId, cart);
+    }
+    
+    public void delete(String sessionId) {
+        contents.remove(sessionId);
     }
     
 }
