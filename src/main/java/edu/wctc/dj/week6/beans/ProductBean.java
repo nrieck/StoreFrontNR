@@ -55,7 +55,7 @@ public class ProductBean implements Serializable {
         }
     }
     
-    public String allProducts() {
+    public String allProducts() throws Exception {
         productList = productService.getAllProductNames();
         return "productList";
     }

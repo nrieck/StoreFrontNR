@@ -5,6 +5,7 @@
  */
 package edu.wctc.dj.week6.model;
 
+import edu.wctc.week9.data.ProductDAO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,37 +15,21 @@ import java.util.List;
  * @author L117student
  */
 public class ProductService {
-    
-    private List<Product> productList = Arrays.asList(
-            new Product("1", "Cookie", 2.55),
-            new Product("2", "Apple", 1.25),
-            new Product("3", "Pie", 4.99),
-            new Product("4", "Donut", 2.99),
-            new Product("5", "Chips", 3.99)
-    );
    
     public Product getProductName(String id) {
-        Product theProductName = null;
-        for (Product productName : productList) {
-            if (productName.getProductId().equals(id)) {
-                theProductName = productName;
-            }
-        }
-        return theProductName;
+        // TODO
+        return null;
     }
     
-    public List<Product> getAllProductNames() {
+    public List<Product> getAllProductNames() throws Exception {
+        ProductDAO productDao = new ProductDAO();
+        List<Product> productList = productDao.getProducts();
+        
         return productList;
     }
     
     public List<Product> findProductNames(String search) {
-        search = search.toLowerCase();
-        List<Product> theList = new ArrayList();
-        for (Product productName : productList) {
-            if (productName.getProductName().toLowerCase().startsWith(search)) {
-                theList.add(productName);
-            }
-        }
-        return theList;
+        // TODO
+        return null;
     }
 }
