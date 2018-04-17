@@ -1,5 +1,5 @@
 
-package edu.wctc.dj.week6.model;
+package edu.wctc.dj.week10.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

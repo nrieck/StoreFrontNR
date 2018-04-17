@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.dj.week6.model;
+package edu.wctc.dj.week10.week10.services;
 
+import edu.wctc.dj.week10.model.ShoppingCart;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author Nick
- */
+@Service
+@Transactional
 public class ShoppingCartService {
     private static final Map<String, ShoppingCart> contents = new HashMap<>();
     

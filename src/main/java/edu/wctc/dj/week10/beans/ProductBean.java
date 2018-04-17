@@ -3,30 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.dj.week6.beans;
+package edu.wctc.dj.week10.beans;
 
-import edu.wctc.dj.week6.model.Product;
-import edu.wctc.dj.week6.model.ProductService;
+import edu.wctc.dj.week10.model.Product;
+import edu.wctc.dj.week10.week10.services.ProductService;
 import java.io.IOException;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Nick
  */
-@Named(value = "productBean")
-@SessionScoped
+@Component(value = "productBean")
+@Scope("session")
 public class ProductBean implements Serializable {
 
-    private final ProductService productService = new ProductService();
+    @Autowired
+    private ProductService productService;
+    
+    private String search;
     private Product product;
     private List<Product> productList;
+    
     public ProductBean() {
     }
 
@@ -34,6 +39,10 @@ public class ProductBean implements Serializable {
         return product;
     }
 
+    public void setSearch(String search) {
+		this.search = search;
+	}
+    
     public void setProduct(Product product) {
         this.product = product;
     }
@@ -45,6 +54,11 @@ public class ProductBean implements Serializable {
     public void setProductList(List<Product> productList) {
         this.productList = productList;
     }
+    
+    public String searchNames() {
+		productList = productService.findProductNames(search);
+		return "nameList";
+	}
     
     public void productDetail(AjaxBehaviorEvent event) {
         try {
