@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.nr.storefront.model;
+package edu.wctc.nr.nrstorefront.model;
 
 import com.sun.jndi.cosnaming.IiopUrl.Address;
 import javax.persistence.CascadeType;

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.nr.storefront.beans;
+package edu.wctc.nr.nrstorefront.beans;
 
-import edu.wctc.nr.storefront.model.Product;
-import edu.wctc.nr.storefront.model.ShoppingCart;
-import edu.wctc.nr.storefront.service.ShoppingCartService;
+import edu.wctc.nr.nrstorefront.model.Product;
+import edu.wctc.nr.nrstorefront.model.ShoppingCart;
+import edu.wctc.nr.nrstorefront.service.ShoppingCartService;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import org.springframework.context.annotation.Scope;

@@ -1,5 +1,5 @@
 
-package edu.wctc.nr.storefront.data;
+package edu.wctc.nr.nrstorefront.data;
 
 import java.util.Properties;
 import javax.naming.NamingException;

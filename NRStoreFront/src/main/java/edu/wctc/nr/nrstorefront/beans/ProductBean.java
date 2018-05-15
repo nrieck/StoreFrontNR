@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.nr.storefront.beans;
+package edu.wctc.nr.nrstorefront.beans;
 
-import edu.wctc.nr.storefront.model.Product;
-import edu.wctc.nr.storefront.service.ProductService;
+import edu.wctc.nr.nrstorefront.model.Product;
+import edu.wctc.nr.nrstorefront.service.ProductService;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;

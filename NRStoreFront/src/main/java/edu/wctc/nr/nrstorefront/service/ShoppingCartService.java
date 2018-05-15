@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.nr.storefront.service;
+package edu.wctc.nr.nrstorefront.service;
 
-import edu.wctc.nr.storefront.model.ShoppingCart;
+import edu.wctc.nr.nrstorefront.model.ShoppingCart;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Service;

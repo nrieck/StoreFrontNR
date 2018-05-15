@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wctc.nr.storefront.data.dao;
+package edu.wctc.nr.nrstorefront.data.dao;
 
-import edu.wctc.nr.storefront.model.Product;
+import edu.wctc.nr.nrstorefront.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IProductDAO extends JpaRepository<Product, String>{

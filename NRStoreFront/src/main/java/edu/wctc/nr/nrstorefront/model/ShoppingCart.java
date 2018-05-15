@@ -1,5 +1,5 @@
 
-package edu.wctc.nr.storefront.model;
+package edu.wctc.nr.nrstorefront.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
